@@ -1,0 +1,600 @@
+:root {
+  --primary-text-color: #2e2f42;
+  --secondary-color: #434455;
+  --accent-color: #4d5ae5;
+  --footer-logo: #f4f4fd;
+  --color-button: #fff;
+  --hover-color: #404bbf;
+  --border-color: #e7e9fc;
+  --secondary-border-color: #8e8f99;
+}
+
+body {
+  background-color: var(--color-button);
+  font-family: "Roboto", sans-serif;
+  color: var(--primary-text-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.page-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  width: 1158px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-flex {
+  display: flex;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.logo {
+  color: var(--primary-text-color);
+  font-family: "Raleway";
+  font-weight: 800;
+  font-size: 18px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-transform: uppercase;
+  margin-right: 76px;
+  line-height: 1.33;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu .menu-item + .menu-item {
+  margin-left: 40px;
+}
+
+.link {
+  color: var(--primary-text-color);
+  display: block;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--hover-color);
+}
+
+.link:active {
+  color: var(--accent-color);
+}
+
+.link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height:4px;
+  background-color: var(--hover-color);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+.link:hover::after,
+.link:focus::after,
+.link:active::after{
+  opacity: 1;
+ transform: scale(1);
+}
+
+.contacts-info.list {
+  display: flex;
+  margin-left: auto;
+}
+
+.contacts-info .contacts-item + .contacts-item {
+  margin-left: 40px;
+}
+
+.contacts {
+  color: var(--secondary-color);
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-decoration: none;
+}
+
+.contacts:hover,
+.contacts:focus {
+  color: var(--hover-color);
+}
+
+.contacts:active {
+  color: var(--accent-color);
+}
+
+.banner {
+  padding-top: 188px;
+  padding-bottom: 188px;
+  max-width: 1440px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-text-color);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.title-page {
+  color: var(--color-button);
+  font-weight: 700;
+  font-size: 56px;
+  width: 494px;
+  line-height: 1.07;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+.btn {
+  color: var(--color-button);
+  background-color: var(--accent-color);
+  font-family: "Roboto";
+  font-weight: 500;
+  padding: 16px 32px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.18;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--hover-color);
+  color: var(--color-button);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  background-color: var(--accent-color);
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 408px;
+  min-height: 576px;
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.btn-close{
+     position: absolute;
+     top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.features {
+  padding-top: 120px;
+}
+
+.features-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-list .features-item + .features-item {
+  margin-left: 24px;
+}
+
+.sprite-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  background-color: var(--footer-logo);
+  border-radius: 4px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.features-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.features-description {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--secondary-color);
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.works-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.works-list .list-item + .list-item {
+  margin-left: 24px;
+}
+
+.no-gap {
+  display: block;
+}
+
+.title-works {
+  margin-top: 0;
+  margin-bottom: 72px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+}
+
+.back {
+  background-color: var(--footer-logo);
+}
+
+.title-our-team {
+  margin-top: 0;
+  margin-bottom: 72px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+}
+
+.card-bg {
+  background-color: var(--color-button);
+  width: 264px;
+}
+
+.cards .card-bg + .card-bg {
+  margin-left: 24px;
+  margin-right: 0;
+}
+
+.card-contant {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.card-bg > .card-contant,
+.contant {
+  padding: 32px 16px;
+}
+
+.card-title {
+  font-weight: 500;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.card-description {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.card-sprites {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sprite-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.sprite-link:hover,
+.sprite-link:focus,
+.sprite-link:active {
+  background-color: var(--hover-color);
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 72px;
+  text-transform: capitalize;
+}
+
+.customer-sprites {
+  display: flex;
+  justify-content: space-around;
+}
+
+.customer-link {
+  color: var(--hover-color);
+  padding: 16px 32px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+}
+
+.customer-link:hover {
+  border: 1px solid var(--hover-color);
+}
+
+.customer-link:hover use {
+  fill: var(--hover-color);
+}
+
+.customer-icon {
+  fill: #8e8f99;
+}
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--primary-text-color);
+}
+
+.content {
+  display: flex;
+}
+
+.footer-content {
+  margin-right: 120px;
+}
+
+.footer-logo {
+  font-family: "Raleway";
+  display: block;
+  color: var(--footer-logo);
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.info {
+  width: 264px;
+  color: var(--border-color);
+}
+
+.footer-title {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--color-button);
+}
+
+.footer-list {
+  display: flex;
+}
+
+.footer-list .footer-sprites + .footer-sprites {
+  margin-left: 16px;
+}
+
+.footer-sprites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-sprites:hover,
+.footer-sprites:focus,
+.footer-sprites:active {
+  background-color: #31d0aa;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.buttons .btn-item + .btn-item {
+  margin-left: 24px;
+}
+
+.btn-products {
+  color: var(--accent-color);
+  background-color: var(--footer-logo);
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  padding: 12px 24px;
+  border-radius: 4px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.btn-products:hover,
+.btn-products:focus {
+  background-color: var(--hover-color);
+  border: 1px solid var(--hover-color);
+  color: var(--color-button);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.btn-products:active {
+  background-color: var(--accent-color);
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+
+.product-item {
+  width: 360px;
+}
+
+.product-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.product-link {
+  text-decoration: none;
+}
+
+
+.text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px 32px;
+    color: #F4F4FD;
+    opacity: 0;
+}
+
+.product-link:hover .text{
+  opacity: 1;
+}
+
+.img-thumb{
+  position: relative;
+  overflow: hidden;
+}
+
+.product-overlay{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4D5AE5;;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+
+.product-link:hover .product-overlay,
+.product-link:focus .product-overlay {
+  transform: translateY(0);
+}
+.contant {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.title-product {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.description-product {
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}

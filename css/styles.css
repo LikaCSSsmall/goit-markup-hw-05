@@ -7,6 +7,7 @@
   --hover-color: #404bbf;
   --border-color: #e7e9fc;
   --secondary-border-color: #8e8f99;
+  ---timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -78,38 +79,32 @@ body {
   padding-bottom: 24px;
   position: relative;
   text-decoration: none;
+  transition: color var(---timing-function);
 }
 
 .link:hover,
 .link:focus {
   color: var(--hover-color);
+  
 }
 
 .link:active {
   color: var(--accent-color);
 }
 
-.link::after{
-  content: '';
+.studio::after,
+.portfolio::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   display: block;
   width: 100%;
-  height:4px;
+  height: 4px;
   background-color: var(--hover-color);
   border-radius: 2px;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
-.link:hover::after,
-.link:focus::after,
-.link:active::after{
-  opacity: 1;
- transform: scale(1);
-}
 
 .contacts-info.list {
   display: flex;
@@ -126,6 +121,7 @@ body {
   padding-top: 24px;
   padding-bottom: 24px;
   text-decoration: none;
+  transition: color var(---timing-function);
 }
 
 .contacts:hover,
@@ -177,6 +173,8 @@ body {
   font-size: 16px;
   line-height: 1.18;
   cursor: pointer;
+  transition: background-color var(---timing-function),
+    box-shadow var(---timing-function);
 }
 
 .btn:hover,
@@ -204,28 +202,30 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   min-width: 408px;
   min-height: 576px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  opacity: 1;
+  transition: transform var(---timing-function), opacity var(---timing-function);
 }
 
-.btn-close{
-     position: absolute;
-     top: 24px;
-    right: 24px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--border-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    border-radius: 24px;
+.btn-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 24px;
 }
 
 .backdrop.is-hidden {
@@ -381,6 +381,7 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: var(--accent-color);
+  transition: background-color var(---timing-function);
 }
 
 .sprite-link:hover,
@@ -409,6 +410,7 @@ body {
   padding: 16px 32px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+  transition: border var(---timing-function) fill var(---timing-function);
 }
 
 .customer-link:hover {
@@ -478,6 +480,7 @@ body {
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color var(---timing-function);
 }
 
 .footer-sprites:hover,
@@ -501,13 +504,16 @@ body {
   color: var(--accent-color);
   background-color: var(--footer-logo);
   font-family: "Roboto";
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   border: 1px solid var(--border-color);
   padding: 12px 24px;
   border-radius: 4px;
   line-height: 1.5;
   cursor: pointer;
+  transition: background-color var(---timing-function),
+    border var(---timing-function), color var(---timing-function),
+    box-shadow var(---timing-function);
 }
 
 .btn-products:hover,
@@ -543,38 +549,39 @@ body {
   text-decoration: none;
 }
 
-
-.text{
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 40px 32px;
-    color: #F4F4FD;
-    opacity: 0;
+.text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 40px 32px;
+  color: var(--footer-logo);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform var(---timing-function);
 }
 
-.product-link:hover .text{
+.product-link:hover .text {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.img-thumb{
+.img-thumb {
   position: relative;
   overflow: hidden;
 }
 
-.product-overlay{
+.product-overlay {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4D5AE5;;
+  background-color: #4d5ae5;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  transition: transform var(---timing-function);
 }
-
 
 .product-link:hover .product-overlay,
 .product-link:focus .product-overlay {

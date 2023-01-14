@@ -92,8 +92,7 @@ body {
   color: var(--accent-color);
 }
 
-.studio::after,
-.portfolio::after {
+.underline::after{
   content: "";
   position: absolute;
   left: 0;

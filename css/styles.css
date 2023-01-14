@@ -408,22 +408,19 @@ body {
 .customer-link {
   color: var(--hover-color);
   padding: 16px 32px;
-  border: 1px solid #8e8f99;
+  border: 1px solid var(--secondary-border-color);
   border-radius: 4px;
+  fill: var(--secondary-border-color);
   transition: border var(---timing-function) fill var(---timing-function);
 }
 
-.customer-link:hover {
+.customer-link:hover, 
+.customer-link:hover use{
   border: 1px solid var(--hover-color);
-}
-
-.customer-link:hover use {
   fill: var(--hover-color);
 }
 
-.customer-icon {
-  fill: #8e8f99;
-}
+
 
 .footer {
   padding-top: 100px;

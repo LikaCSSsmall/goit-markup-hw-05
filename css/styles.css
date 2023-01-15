@@ -203,10 +203,11 @@ body {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transition: visibility var(---timing-function), opacity var(---timing-function);
 }
 
 .backdrop.is-hidden .modal{
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .modal {
@@ -236,18 +237,13 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   border-radius: 24px;
-  transition: background-color var(---timing-function), fill var(---timing-function) ;
+  transition: background-color var(---timing-function), fill var(---timing-function);
 }
 
-  .btn-close:hover,
-  .btn-close:focus,
-  .btn-close:hover svg,
-  .btn-close:focus svg {
+.btn-close:hover{
   background-color: var(--hover-color);
   fill:var(--color-button);
 }
-
-
 
 
 .features {
@@ -426,16 +422,26 @@ body {
   padding: 16px 32px;
   border: 1px solid var(--secondary-border-color);
   border-radius: 4px;
+  gap: 24px;
   fill: var(--secondary-border-color);
-  transition: border var(---timing-function), fill var(---timing-function);
+  transition: border var(---timing-function),  fill var(---timing-function);
 }
 
-.customer-link:hover, 
-.customer-link:hover use{
+
+
+.customer-link:hover,
+.customer-link:focus {
   border: 1px solid var(--hover-color);
   fill: var(--hover-color);
+} 
+
+.customer-icon{
+  transition:  fill var(---timing-function);
 }
 
+.customer-icon:hover use{
+  fill: var(--hover-color);
+}
 
 
 .footer {

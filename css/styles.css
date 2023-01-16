@@ -25,8 +25,7 @@ body {
 
 .container {
   width: 1158px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -66,11 +65,9 @@ body {
 
 .nav-menu {
   display: flex;
+  gap:40px;
 }
 
-.nav-menu .menu-item + .menu-item {
-  margin-left: 40px;
-}
 
 .link {
   color: var(--primary-text-color);
@@ -83,8 +80,7 @@ body {
   transition: color var(---timing-function);
 }
 
-.link:hover,
-.link:focus {
+.link:is(:hover,:focus) {
   color: var(--hover-color);
   
 }
@@ -124,8 +120,7 @@ body {
   transition: color var(---timing-function);
 }
 
-.contacts:hover,
-.contacts:focus {
+.contacts:is(:hover,:focus) {
   color: var(--hover-color);
 }
 
@@ -154,7 +149,7 @@ body {
   color: var(--color-button);
   font-weight: 700;
   font-size: 56px;
-  width: 494px;
+  max-width: 494px;
   line-height: 1.07;
   margin-left: auto;
   margin-right: auto;
@@ -177,8 +172,7 @@ body {
     box-shadow var(---timing-function);
 }
 
-.btn:hover,
-.btn:focus {
+.btn:is(:hover,:focus) {
   background-color: var(--hover-color);
   color: var(--color-button);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -254,11 +248,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 24px;
 }
 
-.features-list .features-item + .features-item {
-  margin-left: 24px;
-}
 
 .sprite-item {
   display: flex;
@@ -307,11 +299,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 24px;
 }
 
-.works-list .list-item + .list-item {
-  margin-left: 24px;
-}
 
 .no-gap {
   display: block;
@@ -342,6 +332,7 @@ body {
 .cards {
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 
 .card-bg {
@@ -349,10 +340,6 @@ body {
   width: 264px;
 }
 
-.cards .card-bg + .card-bg {
-  margin-left: 24px;
-  margin-right: 0;
-}
 
 .card-contant {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -396,9 +383,7 @@ body {
   transition: background-color var(---timing-function);
 }
 
-.sprite-link:hover,
-.sprite-link:focus,
-.sprite-link:active {
+.sprite-link:is(:hover,:focus,:active) {
   background-color: var(--hover-color);
 }
 
@@ -422,6 +407,7 @@ body {
   padding: 16px 32px;
   border: 1px solid var(--secondary-border-color);
   border-radius: 4px;
+  display: flex;
   gap: 24px;
   fill: var(--secondary-border-color);
   transition: border var(---timing-function),  fill var(---timing-function);
@@ -429,8 +415,7 @@ body {
 
 
 
-.customer-link:hover,
-.customer-link:focus {
+.customer-link:is(:hover,:focus) {
   border: 1px solid var(--hover-color);
   fill: var(--hover-color);
 } 
@@ -439,7 +424,7 @@ body {
   transition:  fill var(---timing-function);
 }
 
-.customer-icon:hover use{
+.customer-icon:hover .customer-icon{
   fill: var(--hover-color);
 }
 
@@ -469,7 +454,7 @@ body {
 }
 
 .info {
-  width: 264px;
+  max-width: 264px;
   color: var(--border-color);
 }
 
@@ -485,10 +470,7 @@ body {
 
 .footer-list {
   display: flex;
-}
-
-.footer-list .footer-sprites + .footer-sprites {
-  margin-left: 16px;
+  gap:16px;
 }
 
 .footer-sprites {
@@ -502,9 +484,7 @@ body {
   transition: background-color var(---timing-function);
 }
 
-.footer-sprites:hover,
-.footer-sprites:focus,
-.footer-sprites:active {
+.footer-sprites:is(:hover,:focus,:active) {
   background-color: var(--success-color);
 }
 
@@ -513,11 +493,9 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 72px;
+  gap: 24px;
 }
 
-.buttons .btn-item + .btn-item {
-  margin-left: 24px;
-}
 
 .btn-products {
   color: var(--accent-color);
@@ -535,8 +513,7 @@ body {
     box-shadow var(---timing-function);
 }
 
-.btn-products:hover,
-.btn-products:focus {
+.btn-products:is(:hover,:focus) {
   background-color: var(--hover-color);
   border: 1px solid var(--hover-color);
   color: var(--color-button);
@@ -602,8 +579,7 @@ body {
   transition: transform var(---timing-function);
 }
 
-.product-link:hover .product-overlay,
-.product-link:focus .product-overlay {
+.product-link:is(:hover,:focus) .product-overlay {
   transform: translateY(0);
 }
 .contant {
